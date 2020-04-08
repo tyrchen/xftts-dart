@@ -132,7 +132,9 @@ class TTS {
       .replaceAll(RegExp(r'(\d+)\s*'), '') // remove space between digits and words (may not good for english)
       .replaceAll(RegExp(r'\[\d+\]'), '') // remove [1], [2], ...
       .replaceAll(RegExp(r'```[^`]*```'), '') // remove code block
-      .replaceAll(RegExp(r'\<!--\s*skip_start\s*--\>[^]*?\<!--\s*skip_end\s*--\>'), ''); // remove skipped content
+      .replaceAll(RegExp(r'__|\*\*'), '') // remove strengthen
+      .replaceAll(RegExp(r'\<!--\s*skip_start\s*--\>[^]*?\<!--\s*skip_end\s*--\>'), '') // remove skipped content
+      .replaceAll(RegExp(r'\<!--[^]*--\>'), ''); // remove html comments
     generateMp3ForText(content, filename, splitAt: splitAt);
   }
 }
