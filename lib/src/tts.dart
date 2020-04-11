@@ -93,7 +93,11 @@ class TTS {
         stdout.write('\n');
         ws.close();
       }
-      return base64.decode(res['data']['audio']);
+      if (res['data']['audio'] != null) {
+        return base64.decode(res['data']['audio']);
+      };
+      return base64.decode('');
+      
     }).toList();
   }
 

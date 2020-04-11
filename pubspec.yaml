@@ -1,6 +1,6 @@
 name: xftts
 description: A simple library for Xunfei TTS websocket API.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/tyrchen/xftts-dart
 
 environment:
